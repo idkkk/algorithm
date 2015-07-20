@@ -26,4 +26,19 @@ object NumberUtils {
 
         go(n, 1, 1)
     }
+
+    // 等差数列 (传统递归实现)
+    def sumOfArithmetic(n: BigDecimal, step: Int = 1): BigDecimal = {
+        if (n <= 1) 1 else sumOfArithmetic(n - 1, step) + step
+    }
+
+    // 等差数列 (尾递归实现)
+    def sumOfArithmeticByReduce(n: BigDecimal, step: Int = 1): BigDecimal = {
+        @tailrec
+        def go(n: BigDecimal, acc: BigDecimal, step: Int = 1): BigDecimal = {
+            if (n <= 1) acc else go(n - 1, acc + step, step)
+        }
+
+        go(n, 1, step)
+    }
 }

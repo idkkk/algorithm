@@ -14,3 +14,4 @@
 
 
 * [等差数列求和(包含公式计算)-clojure](code/clj/algorithm.clj)
+* [等差数列求和-scala](code/scala/NumberUtils.scala)
