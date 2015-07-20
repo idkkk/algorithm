@@ -14,16 +14,16 @@ object NumberUtils {
 
     // 斐波那契数列 (传统递归实现)
     def fibonacci(n: BigDecimal): BigDecimal = {
-        if (n <= 0) 1 else n + fibonacci(n - 1)
+        if (n <= 2) 1 else fibonacci(n - 1) + fibonacci(n - 2)
     }
 
     // 斐波那契数列 (尾递归实现)
     def fibonacciWithTailRec(n: BigDecimal): BigDecimal = {
         @tailrec
-        def go(n: BigDecimal, acc: BigDecimal): BigDecimal = {
-            if (n <= 0) acc else go(n - 1, n + acc)
+        def go(n: BigDecimal, acc1: BigDecimal, acc2: BigDecimal): BigDecimal = {
+            if (n <= 0) acc1 else go(n - 1, acc2, acc1 + acc2)
         }
 
-        go(n, 1)
+        go(n, 1, 1)
     }
 }
