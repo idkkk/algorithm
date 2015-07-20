@@ -13,4 +13,4 @@
 * [获取斐波那契数列中指定数字-scala](code/scala/NumberUtils.scala)
 
 
-* [等差数列求和-clojure](code/clj/algorithm.clj)
+* [等差数列求和(包含公式计算)-clojure](code/clj/algorithm.clj)
