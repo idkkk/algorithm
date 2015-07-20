@@ -5,3 +5,4 @@
 
 
 * [交换一个有序列表中连续两个元素的位置-clojure](code/clj/swapItemInVector.clj)
+* [交换列表中奇偶位的数字-scala](code/scala/NumberUtils.scala)
