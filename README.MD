@@ -10,3 +10,4 @@
 
 
 * [获取斐波那契数列中指定数字-clojure](code/clj/algorithm.clj)
+* [获取斐波那契数列中指定数字-scala](code/scala/NumberUtils.scala)
