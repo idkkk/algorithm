@@ -45,6 +45,6 @@ object NumberUtils {
     // 子数组和最大值
     def maxOfSubArraySum(args: Int*): Int = {
         val result = for(i <- 1 to args.length) yield args.sliding(i).toStream
-        result.map(ilist => ilist.map(_.sum)).flatten.max
+        result.map(subList => subList.map(_.sum)).flatten.max
     }
 }
