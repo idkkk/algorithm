@@ -18,3 +18,4 @@
 
 
 * [求子数组的最大和(整数，可以包含负数)-go](code/go/algorithm.go)
+* [求子数组的最大和(整数，可以包含负数)-scala](code/scala/NumberUtils.scala)
