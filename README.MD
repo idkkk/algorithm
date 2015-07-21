@@ -15,3 +15,6 @@
 
 * [等差数列求和(包含公式计算)-clojure](code/clj/algorithm.clj)
 * [等差数列求和-scala](code/scala/NumberUtils.scala)
+
+
+* [求子数组的最大和(整数，可以包含负数)-go](code/go/algorithm.go)
