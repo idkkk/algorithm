@@ -42,7 +42,7 @@ object NumberUtils {
         go(n, 1, step)
     }
 
-    // 等差数列 (尾递归实现)
+    // 子数组和最大值
     def maxOfSubArraySum(args: Int*): Int = {
         val result = for(i <- 1 to args.length) yield args.sliding(i).toStream
         result.map(ilist => ilist.map(_.sum)).flatten.max
