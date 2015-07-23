@@ -27,3 +27,7 @@
 (deftest arithmetic-sequence-sum3-test
   (testing "the arithmetic-sequence-sum3"
     (is (= 604 (arithmetic-sequence-sum3 4)))))
+
+(deftest arithmetic-sequence-sum4-test
+  (testing "the arithmetic-sequence-sum2"
+    (is (= 5050 (arithmetic-sequence-sum2 100)))))
