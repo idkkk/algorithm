@@ -6,7 +6,7 @@
 (defn -main
   "practice algorithm here."
   [& args]
-  (println "Hello, algorithm!"))
+  (do (println args) (println "Hello, algorithm!")))
 
 ;求平均数
 (defn average
