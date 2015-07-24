@@ -6,7 +6,7 @@
 (defn -main
   "practice algorithm here."
   [& args]
-  (println "Hello, algorithm!"))
+  (do (println args) (println "Hello, algorithm!")))
 
 ;求平均数
 (defn average
@@ -36,6 +36,9 @@
 
 ;;等差数列求和-公式求和-带步长100
 (defn arithmetic-sequence-sum3 [n] (/ (* (+ 1 (+ 1 (* (- n 1) 100))) n) 2))
+
+;;等差数列求和-迭代
+(defn arithmetic-sequence-sum4 [n] (take-nth n (iterate inc 1)))
 
 
 
