@@ -1,7 +1,7 @@
 # How to use
 
 * [clojure单元测试使用](algorithm-clj/README.md)
-* [scala单元测试使用](algorithm-scala/README.MD)
+* [scala单元测试使用](algorithm-scala)
 
 # Summary
 
