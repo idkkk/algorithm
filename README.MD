@@ -24,3 +24,5 @@
 
 * [求子数组的最大和(整数，可以包含负数)-go](code/go/algorithm.go)
 * [求子数组的最大和(整数，可以包含负数)-scala](algorithm-scala/src/main/scala-2.11/org/rubik/sandbox/algorithm/NumberUtils.scala)
+
+* [硬币问题（求连续出现正面的次数）-clojure](algorithm-clj/src/algorithm_clj/core.clj)

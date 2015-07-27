@@ -41,4 +41,12 @@
 (defn arithmetic-sequence-sum4 [n] (take-nth n (iterate inc 1)))
 
 
+(def ^{:doc "Count items matching a filter"} count-if (comp count filter))
+;;硬币问题-求连续两次正面的次数
+(defn count-coins
+	"n是连续次数，pred是相同两个正面条件，coll是集合"
+	[n pred coll]
+	(count-if #(every? pred %) (partition n 1 coll)))
+
+
 

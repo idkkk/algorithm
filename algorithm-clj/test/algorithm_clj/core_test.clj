@@ -31,3 +31,7 @@
 (deftest arithmetic-sequence-sum4-test
   (testing "the arithmetic-sequence-sum2"
     (is (= 5050 (arithmetic-sequence-sum2 100)))))
+
+(deftest count-coins-test
+  (testing "the count of coins"
+    (is (= 3 (count-coins 2 #(= % 1) [1 0 0 1 1 0 1 1 0 1 1])))))
