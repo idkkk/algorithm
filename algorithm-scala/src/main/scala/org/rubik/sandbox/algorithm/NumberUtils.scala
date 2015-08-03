@@ -3,6 +3,11 @@ package org.rubik.sandbox.algorithm
 import scala.annotation.tailrec
 
 object NumberUtils {
+  def countOfCoins(numbers: List[Int], valueOfSurface: Int): Int = {
+    val result = for(elem <- numbers.sliding(2) if (elem.head == valueOfSurface && elem.head == elem.last)) yield elem
+    result.length
+  }
+
   def avg(numbers: BigDecimal*): BigDecimal = {
     numbers.sum / numbers.size
   }

@@ -1,6 +1,6 @@
 # How to use
 
-* [clojure单元测试使用](algorithm-clj/README.md)
+* [clojure单元测试使用](algorithm-clj/README.md)  
 * [scala单元测试使用](algorithm-scala)
 
 # Summary
@@ -26,3 +26,4 @@
 * [求子数组的最大和(整数，可以包含负数)-scala](algorithm-scala/src/main/scala-2.11/org/rubik/sandbox/algorithm/NumberUtils.scala)
 
 * [硬币问题(求连续出现正面的次数)-clojure](algorithm-clj/src/algorithm_clj/core.clj)
+* [硬币问题(求连续出现同样面的次数)-scala](algorithm-scala/src/main/scala-2.11/org/rubik/sandbox/algorithm/NumberUtils.scala)

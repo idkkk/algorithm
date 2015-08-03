@@ -38,7 +38,7 @@ class NumberUtilsSpec extends FlatSpec {
   // fibonacci with tailrec
   "fibonacci with tailrec" should "bigger index N numbers" in {
     assert(NumberUtils.fibonacciWithTailRec(100) == BigDecimal("573147844013817084101"))
-    assert(NumberUtils.fibonacciWithTailRec(2000) == BigDecimal("6835702259575806647045396549170580107055408029365524565407553367798082454408054014954534318953113802726603726769523447478238192192714526677939943338306101405105414819705664090901813637296453767095528104868264704914433529355579148731044685634135487735897954629842516947101494253575869699893400976539545740214819819151952085089538422954565146720383752121972115725761141759114990448978941370030912401573418221496592822626"))
+    assert(NumberUtils.fibonacciWithTailRec(500) == BigDecimal("225591516161936330872512695036072072046011324913758190588638866418474627738686883405015987052796968498626"))
   }
 
   // arithmetic
@@ -53,7 +53,7 @@ class NumberUtilsSpec extends FlatSpec {
   }
 
   // arithmetic with tailrec
-  "arithmetic with tailrec" should "equals difference" in {
+  "arithmetic with tailrec" should "foreach" in {
     assert(NumberUtils.arithmeticWithTailRec(1, 2) == 1)
     assert(NumberUtils.arithmeticWithTailRec(3, 2) == 5)
     assert(NumberUtils.arithmeticWithTailRec(1000, 10) == 9991)
@@ -62,5 +62,10 @@ class NumberUtilsSpec extends FlatSpec {
   // max sum of sub list
   "sub list" should "max sum" in {
     assert(NumberUtils.maxSumOfSubList(1, -5, -2, 8, 13, 20, -40) == 41)
+  }
+
+  "the count of coins face" should "counts of coins" in {
+    val ints = List(1, 0, 0, 1, 0, 1, 1, 0, 1, 1, 0, 0, 1, 1, 1, 1)
+    assert(NumberUtils.countOfCoins(ints, 1) == 5)
   }
 }
