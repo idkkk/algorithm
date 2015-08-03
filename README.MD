@@ -1,6 +1,7 @@
 # How to use
 
 * [clojure单元测试使用](algorithm-clj/README.md)  
+
 * [scala单元测试使用](algorithm-scala)
 
 # Summary
@@ -11,7 +12,6 @@
 
 * [交换一个有序列表中连续两个元素的位置-clojure](algorithm-clj/src/algorithm_clj/core.clj)
 * [交换列表中奇偶位的数字-scala](algorithm-scala/src/main/scala/org/rubik/sandbox/algorithm/NumberUtils.scala)
-
 
 
 * [获取斐波那契数列中指定数字-clojure](algorithm-clj/src/algorithm_clj/core.clj)
@@ -27,3 +27,6 @@
 
 * [硬币问题(求连续出现正面的次数)-clojure](algorithm-clj/src/algorithm_clj/core.clj)
 * [硬币问题(求连续出现同样面的次数)-scala](algorithm-scala/src/main/scala/org/rubik/sandbox/algorithm/NumberUtils.scala)
+
+
+* [根据单词集合获取词频TopN-scala](algorithm-scala/src/main/scala/org/rubik/sandbox/algorithm/NumberUtils.scala)

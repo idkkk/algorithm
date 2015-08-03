@@ -3,6 +3,10 @@ package org.rubik.sandbox.algorithm
 import scala.annotation.tailrec
 
 object NumberUtils {
+  def topNOfWordFrequency(words: List[String], n: Int): Seq[(String, Int)] = {
+    words.groupBy(word => word).mapValues(_.length).toSeq.sortBy(_._2).reverse.take(n)
+  }
+
   def countOfCoins(numbers: List[Int], valueOfSurface: Int): Int = {
     val result = for(elem <- numbers.sliding(2) if (elem.head == valueOfSurface && elem.head == elem.last)) yield elem
     result.length

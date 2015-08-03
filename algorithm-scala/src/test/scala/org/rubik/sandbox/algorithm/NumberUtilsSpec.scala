@@ -68,4 +68,9 @@ class NumberUtilsSpec extends FlatSpec {
     val ints = List(1, 0, 0, 1, 0, 1, 1, 0, 1, 1, 0, 0, 1, 1, 1, 1)
     assert(NumberUtils.countOfCoins(ints, 1) == 5)
   }
+
+  "top N for word frequency" should "top N" in {
+    val words = List("测试", "abc", "xyz", "xYz", "abc", "中国", "China", "测试", "测试abc", "abc", "xzy", "试测", "国中", "中国")
+    assert(Seq(("abc",3), ("测试",2)) == NumberUtils.topNOfWordFrequency(words, 2))
+  }
 }
