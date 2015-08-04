@@ -5,8 +5,8 @@ import scala.annotation.tailrec
 object NumberUtils {
   def maxMultiplyValueOfNaturalNumber(n: Int): Seq[Int] = {
     val numbers = 1 to n
-    val result = for(i <- 2 until 100 if numbers.sliding(i).filter(_.reduce(_+_)==n).nonEmpty)
-                    yield numbers.sliding(i).filter(_.reduce(_+_)==n)
+    val result = for(i <- 2 until n if numbers.sliding(i).filter(_.reduce(_+_) == n).nonEmpty)
+                    yield numbers.sliding(i).filter(_.reduce(_+_) == n)
     result.flatten.maxBy(_.reduce(_ * _))
   }
 
