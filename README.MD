@@ -28,5 +28,5 @@
 * [硬币问题(求连续出现正面的次数)-clojure](algorithm-clj/src/algorithm_clj/core.clj)
 * [硬币问题(求连续出现同样面的次数)-scala](algorithm-scala/src/main/scala/org/rubik/sandbox/algorithm/NumberUtils.scala)
 
-
+* [根据单词集合获取词频TopN-clojure](algorithm-clj/src/algorithm_clj/core.clj)
 * [根据单词集合获取词频TopN-scala](algorithm-scala/src/main/scala/org/rubik/sandbox/algorithm/NumberUtils.scala)

@@ -48,5 +48,16 @@
 	[n pred coll]
 	(count-if #(every? pred %) (partition n 1 coll)))
 
+;;求词频
+(defn frequencies-top
+	"词频，排序"
+	[n]
+	(take 1 (sort-by val > (frequencies n))))
 
+;;求词频-TOIMPRO
+(defn getset [m k]
+	(if (contains? m k) 
+		(conj m (hash-map k (+ 1 (get m k))))
+		(conj m (hash-map k 1))))
+(reduce getset (map (fn[a](hash-map a 1)) '("测试", "abc", "xyz", "xYz", "abc", "中国", "China", "测试", "测试abc", "abc", "xzy", "试测", "国中", "中国")))
 

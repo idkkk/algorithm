@@ -35,3 +35,7 @@
 (deftest count-coins-test
   (testing "the count of coins"
     (is (= 3 (count-coins 2 #(= % 1) [1 0 0 1 1 0 1 1 0 1 1])))))
+
+(deftest frequencies-top-test
+  (testing "the frequencies top number"
+    (is (= '(["abc" 3]) (frequencies-top '("测试", "abc", "xyz", "xYz", "abc", "中国", "China", "测试", "测试abc", "abc", "xzy", "试测", "国中", "中国"))))))
