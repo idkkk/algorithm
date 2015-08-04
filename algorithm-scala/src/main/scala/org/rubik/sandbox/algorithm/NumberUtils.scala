@@ -3,6 +3,13 @@ package org.rubik.sandbox.algorithm
 import scala.annotation.tailrec
 
 object NumberUtils {
+  def maxMultiplyValueOfNaturalNumber(n: Int): Seq[Int] = {
+    val numbers = 1 to n
+    val result = for(i <- 2 until 100 if numbers.sliding(i).filter(_.reduce(_+_)==n).nonEmpty)
+                    yield numbers.sliding(i).filter(_.reduce(_+_)==n)
+    result.flatten.maxBy(_.reduce(_ * _))
+  }
+
   def topNOfWordFrequency(words: List[String], n: Int): Seq[(String, Int)] = {
     words.groupBy(word => word).mapValues(_.length).toSeq.sortBy(_._2).reverse.take(n)
   }

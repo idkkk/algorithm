@@ -73,4 +73,8 @@ class NumberUtilsSpec extends FlatSpec {
     val words = List("测试", "abc", "xyz", "xYz", "abc", "中国", "China", "测试", "测试abc", "abc", "xzy", "试测", "国中", "中国")
     assert(Seq(("abc",3), ("测试",2)) == NumberUtils.topNOfWordFrequency(words, 2))
   }
+
+  "max multiply value of natural numbers" should "max value" in {
+    assert(Seq(198, 199, 200, 201, 202) == NumberUtils.maxMultiplyValueOfNaturalNumber(1000))
+  }
 }
