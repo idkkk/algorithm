@@ -64,10 +64,10 @@
 ;;给一个自然数N，找出连续自然数和等于N的组合，然后找出组合中乘积最大的
 ;(createlist 1 10)
 (defn createlist[start end]
-	(map #(range start %) (range (+ start 1) (+ end 2))))
+	(map #(range start %) (range (+ start 1N) (+ end 2N))))
 ;(createsumlist 100)
 (defn createsumlist[n]
-	(filter #(= n (reduce + %)) (reduce into (map #(createlist % n) (range 1 (+ n 1))))))
+	(filter #(= n (reduce + %)) (reduce into (map #(createlist % n) (range 1N (+ n 1N))))))
 ;TOIMPRO-by macro
 (defn maxnumofsumlist[n]
 	(take 1 (sort-by val > (reduce into (map #(hash-map % (reduce * %)) (createsumlist n))))))
