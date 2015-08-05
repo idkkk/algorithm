@@ -39,3 +39,7 @@
 (deftest frequencies-top-test
   (testing "the frequencies top number"
     (is (= '(["abc" 3]) (frequencies-top '("测试", "abc", "xyz", "xYz", "abc", "中国", "China", "测试", "测试abc", "abc", "xzy", "试测", "国中", "中国"))))))
+
+(deftest maxnumofsumlist-test
+  (testing "get the max num of sum list"
+    (is (= '([(9 10 11 12 13 14 15 16) 518918400]) (maxnumofsumlist 100)))))

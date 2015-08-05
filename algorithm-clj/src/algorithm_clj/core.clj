@@ -61,3 +61,15 @@
 		(conj m (hash-map k 1))))
 (reduce getset (map (fn[a](hash-map a 1)) '("测试", "abc", "xyz", "xYz", "abc", "中国", "China", "测试", "测试abc", "abc", "xzy", "试测", "国中", "中国")))
 
+;;给一个自然数N，找出连续自然数和等于N的组合，然后找出组合中乘积最大的
+;(createlist 1 10)
+(defn createlist[start end]
+	(map #(range start %) (range (+ start 1) (+ end 2))))
+;(createsumlist 100)
+(defn createsumlist[n]
+	(filter #(= n (reduce + %)) (reduce into (map #(createlist % n) (range 1 (+ n 1))))))
+;TOIMPRO-by macro
+(defn maxnumofsumlist[n]
+	(take 1 (sort-by val > (reduce into (map #(hash-map % (reduce * %)) (createsumlist n))))))
+
+
