@@ -74,11 +74,8 @@ class AlgorithmUtilsSpec extends FlatSpec {
     assert(Seq(("abc",3), ("测试",2)) == AlgorithmUtils.topNOfWordFrequency(words, 2))
   }
 
-  "max multiply value of natural numbers" should "none" in {
-    assert(None == AlgorithmUtils.maxMultiplyValueOfNaturalNumber(2))
-  }
-
   "max multiply value of natural numbers" should "max value" in {
+    assert(Seq(2, 3) == AlgorithmUtils.maxMultiplyValueOfNaturalNumber(5))
     assert(Seq(198, 199, 200, 201, 202) == AlgorithmUtils.maxMultiplyValueOfNaturalNumber(1000))
   }
 }

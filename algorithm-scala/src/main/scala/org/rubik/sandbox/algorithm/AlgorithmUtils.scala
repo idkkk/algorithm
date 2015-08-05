@@ -12,17 +12,14 @@ object AlgorithmUtils {
 
   /**
    * 给定任一正整数，求连续自然数之和中乘积最大的那一组自然数
-   * @param n 自然数
+   * @param n 自然数 （n必须大于4）
    * @return 连续自然数
    */
-  def maxMultiplyValueOfNaturalNumber(n: Int): Any = {
-    if (n <= 0) None
-    val numbers = 1 until n
-    val allSubList = for(i <- numbers; subList = numbers.sliding(i).filter(_.reduce(_+_) == n) if subList.nonEmpty)
+  def maxMultiplyValueOfNaturalNumber(n: Int): Seq[Int] = {
+    val numbers = 1 until n/2
+    val result = for(i <- numbers; subList = numbers.view.sliding(i).filter(_.reduce(_ + _) == n))
                     yield subList
-    val allResult = allSubList.flatten
-    val result = if (allResult.nonEmpty) allResult.maxBy(_.reduce(_ * _)) else None
-    result
+    result.par.flatten.maxBy(_.reduce(_ * _)).force
   }
 
   /**
