@@ -71,7 +71,7 @@ object AlgorithmUtils {
    */
   def maxSumOfSubList(numbers: Int*): BigInt = {
     val result = for(i <- 1 to numbers.length) yield numbers.sliding(i)
-    result.map(subList => subList.map(_.sum)).flatten.max
+    result.view.flatten.maxBy(_.sum).sum
   }
 
   /**
