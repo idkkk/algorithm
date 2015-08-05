@@ -75,7 +75,7 @@ class AlgorithmUtilsSpec extends FlatSpec {
   }
 
   "max multiply value of natural numbers" should "max value" in {
-    assert(Seq(2, 3) == AlgorithmUtils.maxMultiplyValueOfNaturalNumber(5))
+    assert(Seq(1, 2, 3) == AlgorithmUtils.maxMultiplyValueOfNaturalNumber(6))
     assert(Seq(198, 199, 200, 201, 202) == AlgorithmUtils.maxMultiplyValueOfNaturalNumber(1000))
   }
 }
