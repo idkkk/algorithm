@@ -75,7 +75,7 @@ class NumberUtilsSpec extends FlatSpec {
   }
 
   "max multiply value of natural numbers" should "none" in {
-    assert(None == NumberUtils.maxMultiplyValueOfNaturalNumber(6))
+    assert(None == NumberUtils.maxMultiplyValueOfNaturalNumber(2))
   }
 
   "max multiply value of natural numbers" should "max value" in {

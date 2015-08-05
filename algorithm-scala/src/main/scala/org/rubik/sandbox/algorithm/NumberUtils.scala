@@ -4,8 +4,8 @@ import scala.annotation.tailrec
 
 object NumberUtils {
   def maxMultiplyValueOfNaturalNumber(n: Int): Any = {
-    val numbers = 1 to n
-    val allSubList = for(i <- 2 until n/2; subList = numbers.sliding(i).filter(_.reduce(_+_) == n) if subList.nonEmpty)
+    val numbers = 1 until n
+    val allSubList = for(i <- numbers; subList = numbers.sliding(i).filter(_.reduce(_+_) == n) if subList.nonEmpty)
                     yield subList
     val allResult = allSubList.flatten
     val result = if (allResult.nonEmpty) allResult.maxBy(_.reduce(_ * _)) else None
