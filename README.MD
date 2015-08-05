@@ -30,3 +30,5 @@
 
 * [根据单词集合获取词频TopN-clojure](algorithm-clj/src/algorithm_clj/core.clj)
 * [根据单词集合获取词频TopN-scala](algorithm-scala/src/main/scala/org/rubik/sandbox/algorithm/NumberUtils.scala)
+
+* [求给出的任意一个数，可以拆分成N个连续自然数的和，找出乘积最大的那一组-scala](algorithm-scala/src/main/scala/org/rubik/sandbox/algorithm/NumberUtils.scala)
