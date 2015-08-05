@@ -19,7 +19,7 @@ object AlgorithmUtils {
     val numbers = 1 until n/2
     val result = for(i <- numbers; subList = numbers.view.sliding(i).filter(_.reduce(_ + _) == n))
                     yield subList
-    result.par.flatten.maxBy(_.reduce(_ * _)).force
+    result.view.flatten.maxBy(_.par.reduce(_ * _)).force
   }
 
   /**
