@@ -10,7 +10,7 @@ import scala.annotation.tailrec
  */
 object AlgorithmUtils {
   def isPrimeNumber(n: Int): Boolean = {
-    if (n == 1) true else (2 to n - 1).par.count(n % _ == 0) == 0
+    if (n == 1) true else (2 to n - 1).exists(n % _ == 0)
   }
 
   /**
