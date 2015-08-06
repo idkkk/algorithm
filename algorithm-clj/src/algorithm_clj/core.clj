@@ -72,4 +72,18 @@
 (defn maxnumofsumlist[n]
 	(take 1 (sort-by val > (reduce into (map #(hash-map % (reduce * %)) (createsumlist n))))))
 
+;;判断给定自然数是否是质数
+;目前为止，人们未找到一个公式可求出所有质数
+(defn prime? [n]
+  (not-any? zero? (map #(rem n %) (range 2 n))))
+
+
+
+
+
+
+
+
+
+
 

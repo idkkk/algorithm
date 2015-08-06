@@ -43,3 +43,19 @@
 (deftest maxnumofsumlist-test
   (testing "get the max num of sum list"
     (is (= '([(9 10 11 12 13 14 15 16) 518918400]) (maxnumofsumlist 100)))))
+
+(deftest prime-test
+  (testing "get the max num of sum list"
+    (do (is (= true (prime? 2)))
+      (is (= true (prime? 3)))
+      (is (= false (prime? 6)))
+      (is (= true (prime? 23)))
+      (is (= true (prime2? 2)))
+      (is (= true (prime2? 3)))
+      (is (= false (prime2? 6)))
+      (is (= true (prime2? 23))))))
+
+
+
+
+
