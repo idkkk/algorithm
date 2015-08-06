@@ -12,14 +12,17 @@ object AlgorithmUtils {
 
   /**
    * 给定任一正整数，求连续自然数之和中乘积最大的那一组自然数
-   * @param n 自然数 （n必须大于4）
+   * @param n 自然数 （n >= 6）
    * @return 连续自然数
    */
   def maxMultiplyValueOfNaturalNumber(n: Int): Seq[Int] = {
-    val numbers = 1 until n/2
-    val result = for(i <- numbers; subList = numbers.view.sliding(i).filter(_.reduce(_ + _) == n))
+    val numbers = 1 to n/2
+    val result = for(i <- numbers; subList = numbers.view.sliding(i).filter(_.reduce(_ + _) == n) if subList.nonEmpty)
                     yield subList
-    result.view.flatten.maxBy(_.par.reduce(_ * _)).force
+    if (result.nonEmpty)
+      result.view.flatten.maxBy(_.par.reduce(_ * _)).force
+    else
+      Seq()
   }
 
   /**
@@ -68,7 +71,7 @@ object AlgorithmUtils {
    */
   def maxSumOfSubList(numbers: Int*): BigInt = {
     val result = for(i <- 1 to numbers.length) yield numbers.sliding(i)
-    result.map(subList => subList.map(_.sum)).flatten.max
+    result.view.flatten.maxBy(_.sum).sum
   }
 
   /**
