@@ -35,3 +35,4 @@
 * [求给出的任意一个数，可以拆分成N个连续自然数的和，找出乘积最大的那一组-scala](algorithm-scala/src/main/scala/org/rubik/sandbox/algorithm/AlgorithmUtils.scala)
 
 * [判断给定自然数是否是质数-clojure](algorithm-clj/src/algorithm_clj/core.clj)
+* [判断给定自然数是否是质数-scala](algorithm-scala/src/main/scala/org/rubik/sandbox/algorithm/AlgorithmUtils.scala)

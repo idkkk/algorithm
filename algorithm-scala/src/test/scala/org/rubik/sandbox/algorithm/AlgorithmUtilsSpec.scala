@@ -78,4 +78,9 @@ class AlgorithmUtilsSpec extends FlatSpec {
     assert(Seq(1, 2, 3) == AlgorithmUtils.maxMultiplyValueOfNaturalNumber(6))
     assert(Seq(198, 199, 200, 201, 202) == AlgorithmUtils.maxMultiplyValueOfNaturalNumber(1000))
   }
+
+  "the number" should "is prime number" in {
+    assert(AlgorithmUtils.isPrimeNumber(11) == true)
+    assert(AlgorithmUtils.isPrimeNumber(1024) == false)
+  }
 }

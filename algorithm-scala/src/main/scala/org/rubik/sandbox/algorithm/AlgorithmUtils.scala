@@ -9,6 +9,9 @@ import scala.annotation.tailrec
  * @since 2015-08-05
  */
 object AlgorithmUtils {
+  def isPrimeNumber(n: Int): Boolean = {
+    if (n == 1) true else (2 to n - 1).par.count(n % _ == 0) == 0
+  }
 
   /**
    * 给定任一正整数，求连续自然数之和中乘积最大的那一组自然数
