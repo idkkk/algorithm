@@ -49,11 +49,7 @@
     (do (is (= true (prime? 2)))
       (is (= true (prime? 3)))
       (is (= false (prime? 6)))
-      (is (= true (prime? 23)))
-      (is (= true (prime2? 2)))
-      (is (= true (prime2? 3)))
-      (is (= false (prime2? 6)))
-      (is (= true (prime2? 23))))))
+      (is (= true (prime? 23))))))
 
 
 
