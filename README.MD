@@ -39,4 +39,8 @@
 
 * [求任意数字集合，组合成的最大数-scala](algorithm-scala/src/main/scala/org/rubik/sandbox/algorithm/util/AlgorithmUtils.scala)
 
+* [各部门不同年龄段的员工数-scala](algorithm-scala/src/main/scala/org/rubik/sandbox/application/util/EmployeeUtils.scala)
+
+* [不同年龄区间的平均薪资-scala](algorithm-scala/src/main/scala/org/rubik/sandbox/application/util/EmployeeUtils.scala)
+
 * [各部门员工的平均薪资-scala](algorithm-scala/src/main/scala/org/rubik/sandbox/application/util/EmployeeUtils.scala)
