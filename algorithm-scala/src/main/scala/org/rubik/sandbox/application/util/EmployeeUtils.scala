@@ -12,13 +12,12 @@ object EmployeeUtils {
   /**
    * 各部门不同年龄段的员工数(目前只计算20-29, 30-39, 40-49区间).
    * @param employes 员工集合
-   * @return 各部门不同年龄段的员工数
+   * @return 各部门不同年龄段的员工数: Map(部门名, List( (年龄区间, 员工数) ) )
    */
   def countForEmployeeOfAgeRange(employes: List[Employee]): Map[String, List[(Seq[Int], Int)]] = {
     val rangeOfAge = (20 to 49).sliding(10, 10).toList
     employes.groupBy(_.department).mapValues(subList => {
-      for(v <- rangeOfAge;
-          data = employes.count(e => subList.head.department==e.department && v.contains(e.age)) if data!=0) yield (v, data)
+      for(v <- rangeOfAge; data = employes.count(e => subList.head.department==e.department && v.contains(e.age)) if data!=0) yield (v, data)
     })
   }
 
@@ -26,7 +25,7 @@ object EmployeeUtils {
   /**
    * 不同年龄区间的平均薪资(目前只计算20-29, 30-39, 40-49区间).
    * @param employes 员工集合
-   * @return 不同年龄区间的平均薪资
+   * @return 不同年龄区间的平均薪资: List( (年龄区间, 平均薪资) )
    */
   def averageSalariesOfAgeRange(employes: List[Employee]): List[(Seq[Int], BigDecimal)] = {
     val rangeOfAge = (20 to 49).sliding(10, 10).toList
@@ -36,7 +35,7 @@ object EmployeeUtils {
   /**
    * 各部门员工平均薪资由高到低排序.
    * @param employes 员工集合
-   * @return 各部门平均薪资排序
+   * @return 各部门平均薪资排序( (部门名, 平均薪资) )
    */
   def averageSalariesOfDepartment(employes: List[Employee]): Seq[(String, BigDecimal)] = {
     employes.groupBy(_.department).mapValues(averageSalariesOfEmployes).toSeq.sortBy(_._2).reverse
