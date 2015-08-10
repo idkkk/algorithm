@@ -77,11 +77,59 @@
 (defn prime? [n]
   (not-any? zero? (map #(rem n %) (range 2 n))))
 
+;;求任意数字集合，组合成的最大数.
+(defn max-number [list]
+	(apply str (sort >  list)))
 
+;;各部门不同年龄段的员工数(目前只计算20-29, 30-39, 40-49区间).
+;定义数据结构
+(defrecord Employee [id name age salary department])
+;数据源
+(def employees
+	(list 
+	(->Employee "BJ100102" "陈金金" 25 12000 "人力资源")
+	(->Employee "SH211101" "王晓菲" 25 15000 "人力资源") 
+	(->Employee "SH210112" "陈洪斌" 36 25000 "技术部")
+	(->Employee "HZ132142" "沈进军" 37 20000 "技术部")
+	(->Employee "HZ123186" "叶飞飞" 36 18000 "市场部")
+	(->Employee "HZ224731" "夏清寿" 37 12000 "市场部")
+	(->Employee "HZ325137" "聂运民" 38 20000 "技术部")
+	(->Employee "HZ332569" "袁丽玲" 25 18000 "人力资源")
+	(->Employee "GZ550020" "张涛" 32 30000 "技术部")
+	(->Employee "JX332300" "王义军" 36 15000 "技术部")
+	(->Employee "JX332301" "李如钢" 36 16000 "技术部")
+	(->Employee "JX332302" "陈牡蓉" 25 16000 "人力资源")
+	(->Employee "JX332303" "唐建宇" 35 16000 "财务部")
+	(->Employee "SZ518119" "刘颖刚" 36 20000 "法务部")
+	(->Employee "GZ510003" "黎明" 36 15000 "销售部")
+	(->Employee "BJ100102" "宋崇峰" 30 20000 "技术部")
+	(->Employee "BJ112200" "余竞" 35 22000 "技术部")
+	(->Employee "BJ101120" "王晓明" 36 25000 "技术部")
+	(->Employee "BJ101132" "华永兵" 37 20000 "技术部")
+	(->Employee "JX332305" "梅雪飞" 35 12000 "人力资源")
+	(->Employee "JX332306" "徐杨" 36 12000 "人力资源")
+	(->Employee "JX332307" "王能翔" 36 12000 "人力资源")
+	(->Employee "JX332308" "施宇" 36 13000 "人力资源")
+	(->Employee "BJ102303" "聂耿" 37 22000 "组织部")
+	(->Employee "BJ100103" "吴智辰" 37 25000 "技术部")
+	(->Employee "BJ100104" "毛杨俊" 37 30000 "销售部")
+	(->Employee "BJ100105" "蒋玖平" 37 40000 "组织部")
+	(->Employee "BJ100106" "丁肇龙" 37 20000 "市场部")
+	(->Employee "GZ510003" "魏小恒" 36 30000 "技术部")
+	(->Employee "BJ100152" "马欣" 38 32000 "技术部")
+	(->Employee "BJ100142" "王菲" 32 30000 "技术部")
+	(->Employee "BJ100056" "Mac" 40 90000 "技术部")
+	(->Employee "BJ123102" "戴成" 32 30000 "市场部")))
 
-
-
-
+(defn count-in-list-with-department
+	;根据给定的年龄列表对[department,[employee,employee]]进行统计
+	;(count-in-list-with-department #{1 25 3 4 5 6 7 8 9 10} (first (group-by :department employees)))
+	[start end employees]
+	;返回部门，数量成的map
+	 (hash-map (str "部门：" (first employees) " 年龄区间:" start "-" end) (count (filter #(contains? (set (range start end)) (:age %)) (second employees)))))
+(defn count-all-list-with-department[list]
+	;根据指定区间查找结果
+	(map (fn[x](map #(count-in-list-with-department (first x) (last x) %) (group-by :department employees))) list))
 
 
 

@@ -51,7 +51,17 @@
       (is (= false (prime? 6)))
       (is (= true (prime? 23))))))
 
+(deftest max-number-test
+  (testing "get the max num of int list"
+    (do (is (= "5431" (max-number '(5 3 4 1))))
+      (is (= "9753" (max-number '(5 3 7 9)))))))
 
+(deftest max-number-test
+  (testing "get the max num of int list"
+    (do (is (= "5431" (max-number '(5 3 4 1))))
+      (is (= "9753" (max-number '(5 3 7 9)))))))
 
-
+(deftest count-all-list-with-department-test
+  (testing "查找20-30年龄段人力资源的人"
+    (is (= '(4) (map val (first (first (count-all-list-with-department [[20 30] [30 40]]))))))))
 
