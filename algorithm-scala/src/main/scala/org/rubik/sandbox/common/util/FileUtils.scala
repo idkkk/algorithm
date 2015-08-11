@@ -24,16 +24,16 @@ object FileUtils {
    * 按行切割成小文件(实现：split -l 2000 -d 3 FILE_NAME).
    * @param sourcePath 原文件全路径
    * @param lines 切割的行数
-   * @param span
+   * @param spanLength 小文件名长度
    * @return
    */
-  def split(sourcePath: String, lines: Int = 2000, span: Int = 3): Unit = {
+  def split(sourcePath: String, lines: Int = 2000, spanLength: Int = 3): Unit = {
     lazy val source = Source.fromFile(sourcePath)
     try {
       var i = 1
       for (block <- source.getLines.sliding(lines, lines).toStream) {
         val content = block.view.reverse.mkString("\n")
-        val file = new File(TEMP_DIR + Strings.padStart(i.toString, span, '0'))
+        val file = new File(TEMP_DIR + Strings.padStart(i.toString, spanLength, '0'))
         Files.write(content, file, Charsets.UTF_8)
         i += 1
       }

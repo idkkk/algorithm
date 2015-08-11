@@ -49,7 +49,7 @@ object AlgorithmUtils {
    * @return TOP N词频
    */
   def topNOfWordFrequency(words: List[String], n: Int): Seq[(String, Int)] = {
-    words.groupBy(word => word).mapValues(_.length).toSeq.sortBy(_._2).reverse.take(n)
+    words.groupBy(word => word).mapValues(_.length).toStream.sortBy(_._2).reverse.take(n)
   }
 
   /**
