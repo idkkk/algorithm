@@ -32,7 +32,7 @@ object FileUtils {
     try {
       var i = 1
       for (block <- source.getLines.sliding(lines, lines).toStream) {
-        val content = block.view.reverse.mkString("\n")
+        val content = block.view.reverse.mkString(System.getProperty("line.separator"))
         val file = new File(TEMP_DIR + Strings.padStart(i.toString, spanLength, '0'))
         Files.write(content, file, Charsets.UTF_8)
         i += 1
