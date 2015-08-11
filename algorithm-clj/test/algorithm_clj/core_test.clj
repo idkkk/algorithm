@@ -77,5 +77,8 @@
   (testing "各部门员工平均薪资由高到低排序"
     (is (= '(["组织部" 31000] ["技术部" 28000] ["销售部" 22500] ["法务部" 20000] ["市场部" 20000] ["财务部" 16000] ["人力资源" 13750]) (average-salary-sorted-with-department)))))
 
+(deftest flatten-new-test
+  (testing "new flatten"
+    (is (= '(1 2 3 4 5 6 7 7 8 9 10) (flatten-new [1 [2 3] 4 [5 [6 7]] [7 8 [9 10]]])))))
 
 

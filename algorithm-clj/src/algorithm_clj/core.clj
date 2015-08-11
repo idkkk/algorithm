@@ -153,6 +153,7 @@
 	;分组-分组内求求平均-转化为map-排序
 	(sort-by val > (reduce into (map (fn[x](hash-map (first x) (let [results (second x)](/ (reduce (fn[a b](+ a (:salary b))) (cons 0 results)) (count results))))) (group-by :department employees)))))
 
-
-
+;;flatten函数实现
+(defn flatten-new[list]
+	(filter (complement sequential?) (tree-seq sequential? identity list)))
 

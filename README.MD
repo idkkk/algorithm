@@ -49,4 +49,6 @@
 * [各部门员工的平均薪资-clojure](algorithm-clj/src/algorithm_clj/core.clj)
 * [各部门员工的平均薪资-scala](algorithm-scala/src/main/scala/org/rubik/sandbox/application/util/EmployeeUtils.scala)
 
+* [flatten函数实现-clojure](algorithm-clj/src/algorithm_clj/core.clj)
+
 * [文件倒序生成-scala](algorithm-scala/src/main/scala/org/rubik/sandbox/common/util/FileUtils.scala)
