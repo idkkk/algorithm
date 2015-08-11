@@ -46,3 +46,5 @@
 * [不同年龄区间的平均薪资-scala](algorithm-scala/src/main/scala/org/rubik/sandbox/application/util/EmployeeUtils.scala)
 
 * [各部门员工的平均薪资-scala](algorithm-scala/src/main/scala/org/rubik/sandbox/application/util/EmployeeUtils.scala)
+
+* [文件倒序生成-scala](algorithm-scala/src/main/scala/org/rubik/sandbox/common/util/FileUtils.scala)
