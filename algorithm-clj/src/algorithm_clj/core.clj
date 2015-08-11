@@ -54,6 +54,14 @@
 	[n]
 	(take 1 (sort-by val > (frequencies n))))
 
+
+(def sword "ab dd ab aa dd ab ab ab")
+;加{}作为起始参数，%1第一个赋值就是{};assoc修改map为%1里的value值%2，值为原来的值加1
+(defn frequencies-top2[s]
+	(reduce #(assoc %1 %2 (inc (%1 %2 0))) {} (re-seq #"\w+" s)))
+
+
+
 ;;求词频-TOIMPRO
 (defn getset [m k]
 	(if (contains? m k) 
@@ -81,7 +89,7 @@
 (defn max-number [list]
 	(apply str (sort >  list)))
 
-;;各部门不同年龄段的员工数(目前只计算20-29, 30-39, 40-49区间).
+;;公司员工相关计算
 ;定义数据结构
 (defrecord Employee [id name age salary department])
 ;数据源
@@ -127,10 +135,23 @@
 	[start end employees]
 	;返回部门，数量成的map
 	 (hash-map (str "部门：" (first employees) " 年龄区间:" start "-" end) (count (filter #(contains? (set (range start end)) (:age %)) (second employees)))))
+;;各部门不同年龄段的员工数(目前只计算20-29, 30-39, 40-49区间).
 (defn count-all-list-with-department[list]
 	;根据指定区间查找结果
 	(map (fn[x](map #(count-in-list-with-department (first x) (last x) %) (group-by :department employees))) list))
-
+(defn average-salary-in-list-with-age[start end employees]
+	;先根据区间过滤
+	(let [results (filter #(contains? (set (range start end)) (:age %)) employees)]
+	;求和求平均
+	(str start "-" end ":" (/ (reduce (fn[a b](+ a (:salary b))) (cons 0 results)) (count results)))))
+;;不同年龄区间的平均薪资(目前只计算20-29, 30-39, 40-49区间).
+(defn average-salary-all-list-with-age[list]
+	;根据指定区间查找结果
+	(map (fn[x](average-salary-in-list-with-age (first x) (last x) employees)) list))
+;;各部门员工平均薪资由高到低排序.
+(defn average-salary-sorted-with-department[]
+	;分组-分组内求求平均-转化为map-排序
+	(sort-by val > (reduce into (map (fn[x](hash-map (first x) (let [results (second x)](/ (reduce (fn[a b](+ a (:salary b))) (cons 0 results)) (count results))))) (group-by :department employees)))))
 
 
 

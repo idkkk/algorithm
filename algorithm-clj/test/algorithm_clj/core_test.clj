@@ -40,6 +40,10 @@
   (testing "the frequencies top number"
     (is (= '(["abc" 3]) (frequencies-top '("测试", "abc", "xyz", "xYz", "abc", "中国", "China", "测试", "测试abc", "abc", "xzy", "试测", "国中", "中国"))))))
 
+(deftest frequencies-top2-test
+  (testing "the frequencies top number"
+    (is (= {"aa" 1, "dd" 2, "ab" 5} (frequencies-top2 sword)))))
+
 (deftest maxnumofsumlist-test
   (testing "get the max num of sum list"
     (is (= '([(9 10 11 12 13 14 15 16) 518918400]) (maxnumofsumlist 100)))))
@@ -64,4 +68,14 @@
 (deftest count-all-list-with-department-test
   (testing "查找20-30年龄段人力资源的人"
     (is (= '(4) (map val (first (first (count-all-list-with-department [[20 30] [30 40]]))))))))
+
+(deftest count-all-list-with-department-test
+  (testing "查找20-30年龄段和30-40段人的平均工资"
+    (is (= '("20-30:15250" "30-40:21500") (average-salary-all-list-with-age [[20 30] [30 40]])))))
+
+(deftest average-salary-sorted-with-department-test
+  (testing "各部门员工平均薪资由高到低排序"
+    (is (= '(["组织部" 31000] ["技术部" 28000] ["销售部" 22500] ["法务部" 20000] ["市场部" 20000] ["财务部" 16000] ["人力资源" 13750]) (average-salary-sorted-with-department)))))
+
+
 

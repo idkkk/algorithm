@@ -43,8 +43,10 @@
 * [各部门不同年龄段的员工数-clojure](algorithm-clj/src/algorithm_clj/core.clj)
 * [各部门不同年龄段的员工数-scala](algorithm-scala/src/main/scala/org/rubik/sandbox/application/util/EmployeeUtils.scala)
 
+* [不同年龄区间的平均薪资-clojure](algorithm-clj/src/algorithm_clj/core.clj)
 * [不同年龄区间的平均薪资-scala](algorithm-scala/src/main/scala/org/rubik/sandbox/application/util/EmployeeUtils.scala)
 
+* [各部门员工的平均薪资-clojure](algorithm-clj/src/algorithm_clj/core.clj)
 * [各部门员工的平均薪资-scala](algorithm-scala/src/main/scala/org/rubik/sandbox/application/util/EmployeeUtils.scala)
 
 * [文件倒序生成-scala](algorithm-scala/src/main/scala/org/rubik/sandbox/common/util/FileUtils.scala)
