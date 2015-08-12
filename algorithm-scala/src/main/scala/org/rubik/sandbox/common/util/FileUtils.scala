@@ -43,7 +43,7 @@ object FileUtils {
   }
 
   /**
-   * 按文件名倒序合并生成新文件.
+   * 按文件名倒序合并生成新文件(实现：find * | sort -r | xargs cat > target.txt).
    * @param targetPath 目标文件全路径
    */
   def merge(targetPath: String): Unit = {

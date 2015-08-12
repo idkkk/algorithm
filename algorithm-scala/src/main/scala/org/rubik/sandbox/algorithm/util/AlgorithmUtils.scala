@@ -24,7 +24,7 @@ object AlgorithmUtils {
    * @return 是否为质数
    */
   def isPrimeNumber(n: Int): Boolean = {
-    if (n == 1) true else !((2 to n-1).exists(n % _ == 0))
+    (2 until n).forall(n % _ != 0)
   }
 
   /**
@@ -33,13 +33,11 @@ object AlgorithmUtils {
    * @return 连续自然数
    */
   def maxMultiplyValueOfNaturalNumber(n: Int): Seq[Int] = {
+    assert(n >= 6, "parameter must greater than 6!")
     val numbers = 1 to n/2
-    val result = for(i <- numbers; subList = numbers.view.sliding(i).filter(_.reduce(_ + _) == n) if subList.nonEmpty)
-                    yield subList
-    if (result.nonEmpty)
-      result.view.flatten.maxBy(_.par.reduce(_ * _)).force
-    else
-      Seq()
+    val allSubList = for(i <- numbers) yield numbers.view.sliding(i).filter(_.reduce(_ + _) == n)
+    val list = allSubList.flatten.toStream
+    if(list.nonEmpty) list.maxBy(_.reduce(_ * _)).force else Seq()
   }
 
   /**
