@@ -12,7 +12,7 @@
 | 交换列表中奇偶位的元素                        | [Clojure](algorithm-clj/src/algorithm_clj/core.clj) | [Scala](algorithm-scala/src/main/scala/org/rubik/sandbox/algorithm/util/AlgorithmUtils.scala) |
 | 获取斐波那契数指定列数字                      | [Clojure](algorithm-clj/src/algorithm_clj/core.clj) | [Scala](algorithm-scala/src/main/scala/org/rubik/sandbox/algorithm/util/AlgorithmUtils.scala) |
 | 等差数列求和值                               | [Clojure](algorithm-clj/src/algorithm_clj/core.clj) | [Scala](algorithm-scala/src/main/scala/org/rubik/sandbox/algorithm/util/AlgorithmUtils.scala) |
-| 求子数组的最大和(整数, 可以包含负数)           | [Clojure](algorithm-clj/src/algorithm_clj/core.clj) | [Scala](algorithm-scala/src/main/scala/org/rubik/sandbox/algorithm/util/AlgorithmUtils.scala) |
+| 求子数组的最大和(整数, 可以包含负数)           | [golang](code/go/algorithm.go)                     | [Scala](algorithm-scala/src/main/scala/org/rubik/sandbox/algorithm/util/AlgorithmUtils.scala) |
 | 硬币问题(求连续出现同样朝向的次数)             | [Clojure](algorithm-clj/src/algorithm_clj/core.clj) | [Scala](algorithm-scala/src/main/scala/org/rubik/sandbox/algorithm/util/AlgorithmUtils.scala) |
 | 单词集合获取词频Top N                        | [Clojure](algorithm-clj/src/algorithm_clj/core.clj) | [Scala](algorithm-scala/src/main/scala/org/rubik/sandbox/algorithm/util/AlgorithmUtils.scala) |
 | 给任一数(拆分成N个连续自然数和),找出乘积最大组  | [Clojure](algorithm-clj/src/algorithm_clj/core.clj) | [Scala](algorithm-scala/src/main/scala/org/rubik/sandbox/algorithm/util/AlgorithmUtils.scala) |
