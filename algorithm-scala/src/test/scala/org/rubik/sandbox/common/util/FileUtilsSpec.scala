@@ -12,7 +12,7 @@ class FileUtilsSpec extends FlatSpec {
     val targetFile = "/Users/xiajinxin/Desktop/target.txt"
 
     SystemUtils.elapsedTime {
-      merge(split(sourceFile), targetFile)
+      reverseFile(sourceFile, targetFile)
     }
 
     val headOfSourceFile = s"head -n 1 ${sourceFile}"

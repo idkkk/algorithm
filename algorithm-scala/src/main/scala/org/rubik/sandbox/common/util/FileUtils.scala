@@ -1,10 +1,9 @@
 package org.rubik.sandbox.common.util
 
-import java.io.{BufferedWriter, FileWriter, File}
+import java.io.{PrintWriter, BufferedWriter, FileWriter, File}
 import java.util.UUID
 
-import com.google.common.base.{Strings, Charsets}
-import com.google.common.collect.Lists
+import com.google.common.base.{Charsets}
 import com.google.common.io.Files
 import scala.io.Source
 
@@ -24,20 +23,26 @@ object FileUtils {
    * @param dataDir 切割后的文件存储的临时目录
    * @return 切割后的小文件存储目录
    */
-  def split(sourcePath: String, lines: Int = 50000, spanLength: Int = 3, dataDir: String = "/Users/xiajinxin/Desktop/data/"): List[String] = {
-    val dataFile = using(Source.fromFile(sourcePath)) {
-      source => {
-          for(lines <- source.getLines.sliding(lines, lines).toStream) yield {
-            val fileName = dataDir + UUID.randomUUID().toString
-            val content = lines.view.reverse.mkString(System.getProperty("line.separator"))
-            val file = new File(fileName)
-            Files.write(content, file, Charsets.UTF_8)
+  private def split(sourcePath: String, lines: Int = 50000, spanLength: Int = 3, dataDir: String = "/Users/xiajinxin/Desktop/data/"): List[String] = {
+    /**
+     * 生成片段文件名
+     * @return 生成的片段文件名
+     */
+    def fileNameOfFragment: (Seq[String]) => String = {
+      block => {
+        val fileName = dataDir + UUID.randomUUID().toString
+        val content = block.view.reverse.mkString(System.getProperty("line.separator"))
+        val file = new File(fileName)
+        Files.write(content, file, Charsets.UTF_8)
 
-            fileName
-          }
-        }.toList
+        fileName
+      }
     }
-    dataFile
+
+    val result = using(Source.fromFile(sourcePath)) {
+      source => source.getLines.sliding(lines, lines).toStream.map(fileNameOfFragment).toList
+    }
+    result
   }
 
   /**
@@ -45,14 +50,25 @@ object FileUtils {
    * @param files 需要进行合并的源文件集合
    * @param targetPath 目标文件全路径
    */
-  def merge(files: List[String], targetPath: String): Unit = {
-    val bw = new BufferedWriter(new FileWriter(new File(targetPath), true))
-    files.reverse.foreach(fileName => bw.write(Files.toString(new File(fileName), Charsets.UTF_8)))
-    bw.close
+  private def merge(files: List[String], targetPath: String): Unit = {
+    using(new BufferedWriter(new FileWriter(new File(targetPath)))) {
+      bw => files.par.reverse.foreach {
+        fileName => bw.append(Files.toString(new File(fileName), Charsets.UTF_8))
+      }
+    }
   }
 
   /**
-   * 自动资源释放
+   * 组合split， merge.
+   * @param sourceFile 原文件
+   * @param targetFile 目标文件
+   */
+  def reverseFile(sourceFile: String, targetFile: String): Unit = {
+    merge(split(sourceFile), targetFile)      // TODO: split(sourceFile) andThen merge(targetFile)
+  }
+
+  /**
+   * 自动资源释放.
    * @param resource 需要释放的资源
    * @param f 执行的函数
    * @tparam A 需要释放的资源类型
