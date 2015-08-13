@@ -51,9 +51,9 @@ object FileUtils {
    * @param targetPath 目标文件全路径
    */
   private def merge(files: List[String], targetPath: String): Unit = {
-    using(new BufferedWriter(new FileWriter(new File(targetPath)))) {
-      bw => files.par.reverse.foreach {
-        fileName => bw.append(Files.toString(new File(fileName), Charsets.UTF_8))
+    using(new PrintWriter(new File(targetPath))) {
+      pw => files.reverse.foreach {
+        fileName => pw.append(Files.toString(new File(fileName), Charsets.UTF_8))
       }
     }
   }
