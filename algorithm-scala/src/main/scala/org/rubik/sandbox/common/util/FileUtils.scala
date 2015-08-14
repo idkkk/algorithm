@@ -1,6 +1,6 @@
 package org.rubik.sandbox.common.util
 
-import java.io.{PrintWriter, BufferedWriter, FileWriter, File}
+import java.io.{PrintWriter, File}
 import java.util.UUID
 
 import com.google.common.base.{Charsets}

@@ -11,9 +11,7 @@ class FileUtilsSpec extends FlatSpec {
     val sourceFile = "/Users/xiajinxin/Desktop/app.log"
     val targetFile = "/Users/xiajinxin/Desktop/target.txt"
 
-    SystemUtils.elapsedTime {
-      reverseFile(sourceFile, targetFile)
-    }
+    reverseFile(sourceFile, targetFile)
 
     val headOfSourceFile = s"head -n 1 ${sourceFile}"
     val tailOfTargetFile = s"tail -n 1 ${targetFile}"
