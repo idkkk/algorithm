@@ -156,4 +156,25 @@
 ;;flatten函数实现
 (defn flatten-new[list]
 	(filter (complement sequential?) (tree-seq sequential? identity list)))
-
+;;大文本倒序
+;TOIMPRO-路径抽取，参数抽取
+(require '[clojure.string :refer [join split]])
+(defn splitbyline[seq filename]
+  (if (empty? seq) filename
+    (recur 
+      (do 
+          (spit (str "./src/algorithm_clj/file/" filename ".txt") (reduce #(str %1 "\n" %2) (reverse (take 2000 seq))))
+          (drop 2000 seq))
+      (inc filename))))
+(defn mergebyfile[filename]
+  (if (< filename 0) "end"
+        (recur (do 
+          ;(prn (slurp (str "./file/" filename ".txt")))
+          (spit "./src/algorithm_clj/file/reverseresult.txt" (str (slurp (str "./src/algorithm_clj/file/" filename ".txt")) "\n") :append true)
+          (dec filename)))))
+(defn reverse-file[name]
+  (time 
+    (with-open [rdr (clojure.java.io/reader (str "./src/algorithm_clj/file/" name ".txt"))]
+      (let [fileseq (line-seq rdr)]
+        (mergebyfile (- (splitbyline fileseq 0) 1))
+        ))))

@@ -22,5 +22,5 @@
 | 从员工集合中计算出不同年龄区间的平均薪资        | [Clojure](algorithm-clj/src/algorithm_clj/core.clj) | [Scala](algorithm-scala/src/main/scala/org/rubik/sandbox/application/util/EmployeeUtils.scala)|
 | 从员工集合中计算出各部门员工的平均薪资          | [Clojure](algorithm-clj/src/algorithm_clj/core.clj) | [Scala](algorithm-scala/src/main/scala/org/rubik/sandbox/application/util/EmployeeUtils.scala)|
 | flatten函数实现                             | [Clojure](algorithm-clj/src/algorithm_clj/core.clj) |                                                                                               |
-| 大文本文件倒序生成                           |                                                     | [Scala](algorithm-scala/src/main/scala/org/rubik/sandbox/common/util/FileUtils.scala)         |
+| 大文本文件倒序生成                           | [Clojure](algorithm-clj/src/algorithm_clj/core.clj) | [Scala](algorithm-scala/src/main/scala/org/rubik/sandbox/common/util/FileUtils.scala)         |
 

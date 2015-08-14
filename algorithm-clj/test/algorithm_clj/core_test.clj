@@ -81,4 +81,17 @@
   (testing "new flatten"
     (is (= '(1 2 3 4 5 6 7 7 8 9 10) (flatten-new [1 [2 3] 4 [5 [6 7]] [7 8 [9 10]]])))))
 
+(deftest reverse-file-test
+  (testing "the arithmetic-sequence-sum2"
+    (is (= true 
+            (do (reverse-file "reversefile") 
+              (= (with-open [rdr (clojure.java.io/reader (str "./src/algorithm_clj/file/reversefile.txt"))]
+               (first (line-seq rdr)))
+             (with-open [rdr (clojure.java.io/reader (str "./src/algorithm_clj/file/reverseresult.txt"))]
+               (last (line-seq rdr)))))))))
+
+
+
+
+
 
