@@ -18,12 +18,11 @@ object FileUtils {
   /**
    * 按行切割成小文件(实现：split -l 2000 -d 3 FILE_NAME).
    * @param sourcePath 原文件全路径
-   * @param lines 切割的行数
-   * @param spanLength 小文件名长度
-   * @param dataDir 切割后的文件存储的临时目录
    * @return 切割后的小文件存储目录
    */
-  private def split(sourcePath: String, lines: Int = 50000, spanLength: Int = 3, dataDir: String = "/Users/xiajinxin/Desktop/data/"): List[String] = {
+  def split(sourcePath: String): List[String] = {
+    val dataDir = "/Users/xiajinxin/Desktop/data/"
+
     /**
      * 生成片段文件名
      * @return 生成的片段文件名
@@ -40,7 +39,7 @@ object FileUtils {
     }
 
     val result = using(Source.fromFile(sourcePath)) {
-      source => source.getLines.sliding(lines, lines).toStream.map(fileNameOfFragment).toList
+      source => source.getLines.sliding(50000, 50000).toStream.map(fileNameOfFragment).toList
     }
     result
   }
@@ -50,7 +49,7 @@ object FileUtils {
    * @param files 需要进行合并的源文件集合
    * @param targetPath 目标文件全路径
    */
-  private def merge(files: List[String], targetPath: String): Unit = {
+  def merge(files: List[String], targetPath: String): Unit = {
     using(new PrintWriter(new File(targetPath))) {
       pw => files.reverse.foreach {
         fileName => pw.append(Files.toString(new File(fileName), Charsets.UTF_8))

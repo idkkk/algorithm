@@ -38,7 +38,7 @@ object EmployeeUtils {
    * @return 各部门平均薪资排序( (部门名, 平均薪资) )
    */
   def averageSalariesOfDepartment(employes: List[Employee]): Seq[(String, BigDecimal)] = {
-    employes.groupBy(_.department).mapValues(averageSalariesOfEmployes).toSeq.sortBy(_._2).reverse
+    employes.groupBy(_.department).mapValues(averageSalariesOfEmployes _).toSeq.sortBy(_._2).reverse
   }
 
   // ================================================================================  priavte
