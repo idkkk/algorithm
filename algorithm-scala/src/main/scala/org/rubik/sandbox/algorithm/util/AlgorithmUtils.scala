@@ -1,6 +1,7 @@
 package org.rubik.sandbox.algorithm.util
 
 import scala.annotation.tailrec
+import scala.collection.{TraversableOnce, GenTraversableOnce}
 
 /**
  * 算法工具类.
@@ -9,6 +10,21 @@ import scala.annotation.tailrec
  * @since 2015-08-05
  */
 object AlgorithmUtils {
+  /**
+   * 实现List的flatten功能.
+   * @param data List集合
+   * @return flatten后的List集合
+   */
+  def flatten(data: List[Any]): List[Any] = {
+    data match {
+      case List() => List()
+      case head :: tails => head match {
+        case x :: y => flatten(List(x)) ::: flatten(y) ::: flatten(tails)
+        case _ => head :: flatten(tails)
+      }
+    }
+  }
+
   /**
    * 求任意数字集合，组合成的最大数.
    * @param numbers 数字集合
