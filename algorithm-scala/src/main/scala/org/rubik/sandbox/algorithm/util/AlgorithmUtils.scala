@@ -1,7 +1,6 @@
 package org.rubik.sandbox.algorithm.util
 
 import scala.annotation.tailrec
-import scala.collection.{TraversableOnce, GenTraversableOnce}
 
 /**
  * 算法工具类.
