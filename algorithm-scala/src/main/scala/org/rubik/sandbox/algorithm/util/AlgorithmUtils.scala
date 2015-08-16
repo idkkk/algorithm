@@ -10,6 +10,14 @@ import scala.annotation.tailrec
  */
 object AlgorithmUtils {
   /**
+   * 数值区间包含1的总数
+   * @param numbers 数值区间
+   * @return 1的总数
+   */
+  def counterOfOne(numbers: Range): Int = {
+    numbers.mkString.count(_ == '1')
+  }
+  /**
    * 实现List的flatten功能.
    * @param data List集合
    * @return flatten后的List集合

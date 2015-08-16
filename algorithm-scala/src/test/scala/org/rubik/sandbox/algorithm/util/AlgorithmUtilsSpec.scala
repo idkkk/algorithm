@@ -5,7 +5,6 @@ import org.rubik.sandbox.algorithm.util.AlgorithmUtils._
 
 class AlgorithmUtilsSpec extends FlatSpec {
 
-  // avg
   "average value" should "sum of numbers / size of numbers" in {
     assert(avg(10) == 10)
     assert(avg(21, 20, 22, 21) == 21)
@@ -21,14 +20,12 @@ class AlgorithmUtilsSpec extends FlatSpec {
     assert(avg(-0.2, -0.8, -10, 1000) == 247.25)
   }
 
-  // swapOddAndEven
   "swap odd and even" should "odd digits" in {
     assert(swapOddAndEven(1) == List(1))
     assert(swapOddAndEven(-1, 3, 2) == List(3, -1, 2))
     assert(swapOddAndEven(1, 2, 3, 4, 5) == List(2, 1, 4, 3, 5))
   }
 
-  // fibonacci
   "fibonacci" should "index N numbers" in {
     assert(fibonacci(0) == 1)
     assert(fibonacci(1) == 1)
@@ -36,13 +33,11 @@ class AlgorithmUtilsSpec extends FlatSpec {
     assert(fibonacci(-2) == 1)
   }
 
-  // fibonacci with tailrec
   "fibonacci with tailrec" should "bigger index N numbers" in {
     assert(fibonacciWithTailRec(100) == BigDecimal("573147844013817084101"))
     assert(fibonacciWithTailRec(500) == BigDecimal("225591516161936330872512695036072072046011324913758190588638866418474627738686883405015987052796968498626"))
   }
 
-  // arithmetic
   "arithmetic" should "equals difference" in {
     assert(arithmetic(0) == 1)
     assert(arithmetic(1) == 1)
@@ -53,14 +48,12 @@ class AlgorithmUtilsSpec extends FlatSpec {
     assert(arithmetic(10, 2) == 19)
   }
 
-  // arithmetic with tailrec
   "arithmetic with tailrec" should "foreach" in {
     assert(arithmeticWithTailRec(1, 2) == 1)
     assert(arithmeticWithTailRec(3, 2) == 5)
     assert(arithmeticWithTailRec(1000, 10) == 9991)
   }
 
-  // max sum of sub list
   "sub list" should "max sum" in {
     assert(maxSumOfSubList(1, -5, -2, 8, 13, 20, -40) == 41)
   }
@@ -98,5 +91,11 @@ class AlgorithmUtilsSpec extends FlatSpec {
   "nested multi List" should "flatten" in {
     val data = List(List(1, List(2, 3)), List(4, List(5, 6)), List(6, List(7, 8), List(8, 9, 10)))
     assert(flatten(data) == List(1, 2, 3, 4, 5, 6, 6, 7, 8, 8, 9, 10))
+  }
+
+  "counter for 1" should "range number" in {
+    assert(counterOfOne(1 to 10) == 2)
+    assert(counterOfOne(1 to 21) == 13)
+    assert(counterOfOne(1 to 100000) == 50001)
   }
 }
