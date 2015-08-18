@@ -90,7 +90,9 @@
              (with-open [rdr (clojure.java.io/reader (str "./src/algorithm_clj/file/reverseresult.txt"))]
                (last (line-seq rdr)))))))))
 
-
+(deftest compresslist-test
+  (testing "compress list test"
+    (is (= ["a" "b" "c" "a" "d" "e"] (compresslist '("a" "a" "a" "a" "b" "c" "c" "a" "a" "d" "e" "e" "e" "e"))))))
 
 
 

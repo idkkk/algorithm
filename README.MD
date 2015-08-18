@@ -24,4 +24,4 @@
 | flatten函数实现                             | [Clojure](algorithm-clj/src/algorithm_clj/core.clj) | [Scala](algorithm-scala/src/main/scala/org/rubik/sandbox/algorithm/util/AlgorithmUtils.scala)  |
 | 大文本文件倒序生成                           | [Clojure](algorithm-clj/src/algorithm_clj/core.clj) | [Scala](algorithm-scala/src/main/scala/org/rubik/sandbox/common/util/FileUtils.scala)         |
 | 求数值区间所有数值含1的个数                   |  | [Scala](algorithm-scala/src/main/scala/org/rubik/sandbox/algorithm/util/AlgorithmUtils.scala)         |
-
+| 消除列表中连续重复的元素                       | [Clojure](algorithm-clj/src/algorithm_clj/core.clj) | [Scala](algorithm-scala/src/main/scala/org/rubik/sandbox/algorithm/util/AlgorithmUtils.scala)         |

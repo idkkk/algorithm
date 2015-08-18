@@ -178,3 +178,6 @@
       (let [fileseq (line-seq rdr)]
         (mergebyfile (- (splitbyline fileseq 0) 1))
         ))))
+;;消除列表中连续重复的元素
+(defn compresslist[list]
+  (reduce #(if (= (last %1) %2)  %1 (conj %1 %2)) [] list))
