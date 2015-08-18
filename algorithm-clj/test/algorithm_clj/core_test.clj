@@ -81,18 +81,22 @@
   (testing "new flatten"
     (is (= '(1 2 3 4 5 6 7 7 8 9 10) (flatten-new [1 [2 3] 4 [5 [6 7]] [7 8 [9 10]]])))))
 
-(deftest reverse-file-test
-  (testing "the arithmetic-sequence-sum2"
-    (is (= true 
-            (do (reverse-file "reversefile") 
-              (= (with-open [rdr (clojure.java.io/reader (str "./src/algorithm_clj/file/reversefile.txt"))]
-               (first (line-seq rdr)))
-             (with-open [rdr (clojure.java.io/reader (str "./src/algorithm_clj/file/reverseresult.txt"))]
-               (last (line-seq rdr)))))))))
+; (deftest reverse-file-test
+;   (testing "the arithmetic-sequence-sum2"
+;     (is (= true 
+;             (do (reverse-file "reversefile") 
+;               (= (with-open [rdr (clojure.java.io/reader (str "./src/algorithm_clj/file/reversefile.txt"))]
+;                (first (line-seq rdr)))
+;              (with-open [rdr (clojure.java.io/reader (str "./src/algorithm_clj/file/reverseresult.txt"))]
+;                (last (line-seq rdr)))))))))
 
 (deftest compresslist-test
   (testing "compress list test"
     (is (= ["a" "b" "c" "a" "d" "e"] (compresslist '("a" "a" "a" "a" "b" "c" "c" "a" "a" "d" "e" "e" "e" "e"))))))
+
+(deftest counter-of-one-test
+  (testing "count number of one position"
+    (is (= 21 (counter-of-one (range 1 101))))))
 
 
 

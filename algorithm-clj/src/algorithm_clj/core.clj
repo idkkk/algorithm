@@ -181,3 +181,8 @@
 ;;消除列表中连续重复的元素
 (defn compresslist[list]
   (reduce #(if (= (last %1) %2)  %1 (conj %1 %2)) [] list))
+
+;;求给定数值区间中1出现的次数
+(defn counter-of-one[list]
+	(count (filter #(= % \1) (reduce #(str %1 %2) list))))
+
