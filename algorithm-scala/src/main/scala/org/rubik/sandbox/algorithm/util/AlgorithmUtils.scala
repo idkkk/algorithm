@@ -9,6 +9,12 @@ import scala.annotation.tailrec
  * @since 2015-08-05
  */
 object AlgorithmUtils {
+  /**
+   * 消除连续重复元素.
+   * @param data 元素集合
+   * @tparam T 元素类型
+   * @return 去重后的集合
+   */
   def eliminateConsecutiveDuplicates[T](data: List[T]): List[T] = {
     data.foldLeft(List.empty[T]) {
       (result, current) =>  if (result.lastOption.getOrElse("") == current) result else result :+ current
