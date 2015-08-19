@@ -98,4 +98,9 @@ class AlgorithmUtilsSpec extends FlatSpec {
     assert(counterOfOne(1 to 21) == 13)
     assert(counterOfOne(1 to 100000) == 50001)
   }
+
+  "list elements" should "eliminate consecutive duplicates" in {
+    assert(eliminateConsecutiveDuplicates(List(1, 1, 2, 3, 3, 3, 4, 5, 5, 4, 4, 0, 2, 2, 2, 1, 1, 1, 6, 6, 6, 8, 9, 9)) == List(1, 2, 3, 4, 5, 4, 0, 2, 1, 6, 8, 9))
+    assert(eliminateConsecutiveDuplicates(List("a", "a", "a", "c", "C", "c", "d", "a", "a", "x", "x", "x", "xx", "xxx", "xxx", "y", "y", "z")) == List("a", "c", "C", "c", "d", "a", "x", "xx", "xxx", "y", "z"))
+  }
 }

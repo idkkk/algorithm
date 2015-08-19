@@ -9,6 +9,12 @@ import scala.annotation.tailrec
  * @since 2015-08-05
  */
 object AlgorithmUtils {
+  def eliminateConsecutiveDuplicates[T](data: List[T]): List[T] = {
+    data.foldLeft(List.empty[T]) {
+      (result, current) =>  if (result.lastOption.getOrElse("") == current) result else result :+ current
+    }
+  }
+
   /**
    * 数值区间包含1的总数
    * @param numbers 数值区间
@@ -17,6 +23,7 @@ object AlgorithmUtils {
   def counterOfOne(numbers: Range): Int = {
     numbers.mkString.count(_ == '1')
   }
+
   /**
    * 实现List的flatten功能.
    * @param data List集合

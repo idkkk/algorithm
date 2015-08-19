@@ -23,5 +23,5 @@
 | 从员工集合中计算出各部门员工的平均薪资          | [Clojure](algorithm-clj/src/algorithm_clj/core.clj) | [Scala](algorithm-scala/src/main/scala/org/rubik/sandbox/application/util/EmployeeUtils.scala)|
 | flatten函数实现                             | [Clojure](algorithm-clj/src/algorithm_clj/core.clj) | [Scala](algorithm-scala/src/main/scala/org/rubik/sandbox/algorithm/util/AlgorithmUtils.scala)  |
 | 大文本文件倒序生成                           | [Clojure](algorithm-clj/src/algorithm_clj/core.clj) | [Scala](algorithm-scala/src/main/scala/org/rubik/sandbox/common/util/FileUtils.scala)         |
-| 求给定数值区间中1出现的次数                   | [Clojure](algorithm-clj/src/algorithm_clj/core.clj) | [Scala](algorithm-scala/src/main/scala/org/rubik/sandbox/algorithm/util/AlgorithmUtils.scala)         |
-| 消除列表中连续重复的元素                       | [Clojure](algorithm-clj/src/algorithm_clj/core.clj) |  |
+| 求给定数值区间中1出现的次数                   | [Clojure](algorithm-clj/src/algorithm_clj/core.clj) | [Scala](algorithm-scala/src/main/scala/org/rubik/sandbox/algorithm/util/AlgorithmUtils.scala)  |
+| 消除列表中连续重复的元素                       | [Clojure](algorithm-clj/src/algorithm_clj/core.clj) | [Scala](algorithm-scala/src/main/scala/org/rubik/sandbox/algorithm/util/AlgorithmUtils.scala) |
