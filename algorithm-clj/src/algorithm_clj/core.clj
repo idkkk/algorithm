@@ -191,5 +191,11 @@
 ;(get-val-as-coll (array-map "a" ["a" "b"] "b" ["c" "d"]) "e")
 (defn pack-coll[list]
   (vals (reduce #(assoc %1 %2 (get-val-as-coll %1 %2)) (array-map) list)))
+;;统计两个列表中相同位置相等元素的个数
+(require '[clojure.data :as data])
+(defn count-same[list1 list2]
+  (let [[_ _ matches] (data/diff list1 list2)]
+  (count (remove nil? matches))))
+
 
 
