@@ -98,6 +98,6 @@
   (testing "count number of one position"
     (is (= 21 (counter-of-one (range 1 101))))))
 
-
-
-
+(deftest counter-of-one-test
+  (testing "count number of one position"
+    (is (= '(["e" "e" "e" "e"] ["d"] ["c" "c"] ["b"] ["a" "a" "a" "a" "a" "a"]) (pack-coll '("a" "a" "a" "a" "b" "c" "c" "a" "a" "d" "e" "e" "e" "e"))))))

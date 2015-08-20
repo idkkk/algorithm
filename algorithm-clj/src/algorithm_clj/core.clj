@@ -185,4 +185,11 @@
 ;;求给定数值区间中1出现的次数
 (defn counter-of-one[list]
 	(count (filter #(= % \1) (reduce #(str %1 %2) list))))
+;;根据指定列表中连续重复的元素来组成子集合
+(defn get-val-as-coll[map key]
+  (if (nil? (map key)) (conj [] key) (conj (map key) key)))
+;(get-val-as-coll (array-map "a" ["a" "b"] "b" ["c" "d"]) "e")
+(defn pack-coll[list]
+  (vals (reduce #(assoc %1 %2 (get-val-as-coll %1 %2)) (array-map) list)))
+
 
