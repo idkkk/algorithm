@@ -191,6 +191,21 @@
 ;(get-val-as-coll (array-map "a" ["a" "b"] "b" ["c" "d"]) "e")
 (defn pack-coll[list]
   (reverse (vals (reduce #(assoc %1 %2 (get-val-as-coll %1 %2)) (array-map) list))))
+;;根据指定列表中连续重复的元素来组成子集合
+(defn same?[veclist key]
+  (if (empty? veclist) false (= (last (last veclist)) key)))
+;(same? ["\\a" "\\b"] (char 98))
+(defn add-new[veclist key]
+  (conj veclist (conj [] key)))
+;(add-new ["a" "b"] "c")
+(defn add-old[veclist key]
+  (conj (vec (drop-last veclist)) (conj (last veclist) key)))
+;(add-old [1 2 [3 4]] 5)
+(defn pack-coll-sorted[list]
+  (reduce #(if (same? %1 %2) (add-old %1 %2) (add-new %1 %2)) [] list))
+;(pack-coll-sorted '("a" "a" "b" "c" "c" "a" "a" "d" "e"))
+
+
 ;;统计两个列表中相同位置相等元素的个数
 (require '[clojure.data :as data])
 (defn count-same[list1 list2]

@@ -102,6 +102,14 @@
   (testing "count number of one position"
     (is (= '(["a" "a" "a" "a" "a" "a"] ["b"] ["c" "c"] ["d"] ["e" "e" "e" "e"]) (pack-coll '("a" "a" "a" "a" "b" "c" "c" "a" "a" "d" "e" "e" "e" "e"))))))
 
+(deftest pack-coll-sorted-test
+  (testing "count number of one position"
+    (is (= [["a" "a"] ["b"] ["c" "c"] ["a" "a"] ["d"] ["e"]] (pack-coll-sorted '("a" "a" "b" "c" "c" "a" "a" "d" "e"))))))
+
+
+
+
+
 (deftest count-same-test
   (testing "count number of one position"
     (is (= 4 (count-same '("a" "b" "c" "e" "d" "f" "g") '("a" "e" "c" "d" "e" "f" "g"))))))
