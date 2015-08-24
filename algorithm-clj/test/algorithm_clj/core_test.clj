@@ -100,7 +100,7 @@
 
 (deftest pack-coll-test
   (testing "count number of one position"
-    (is (= '(["e" "e" "e" "e"] ["d"] ["c" "c"] ["b"] ["a" "a" "a" "a" "a" "a"]) (pack-coll '("a" "a" "a" "a" "b" "c" "c" "a" "a" "d" "e" "e" "e" "e"))))))
+    (is (= '(["a" "a" "a" "a" "a" "a"] ["b"] ["c" "c"] ["d"] ["e" "e" "e" "e"]) (pack-coll '("a" "a" "a" "a" "b" "c" "c" "a" "a" "d" "e" "e" "e" "e"))))))
 
 (deftest count-same-test
   (testing "count number of one position"
