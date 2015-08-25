@@ -103,4 +103,13 @@ class AlgorithmUtilsSpec extends FlatSpec {
     assert(eliminateConsecutiveDuplicates(List(1, 1, 2, 3, 3, 3, 4, 5, 5, 4, 4, 0, 2, 2, 2, 1, 1, 1, 6, 6, 6, 8, 9, 9)) == List(1, 2, 3, 4, 5, 4, 0, 2, 1, 6, 8, 9))
     assert(eliminateConsecutiveDuplicates(List("a", "a", "a", "c", "C", "c", "d", "a", "a", "x", "x", "x", "xx", "xxx", "xxx", "y", "y", "z")) == List("a", "c", "C", "c", "d", "a", "x", "xx", "xxx", "y", "z"))
   }
+
+  "same index element in list" should "equals" in {
+    assert(countOfEqualsForSameIndexElements(List(1, 1, 2, 3, 3, 3, 4, 5, 5, 4, 4, 0), List(1, 1, 3, 2, 3, 5, 5)) == 3)
+    assert(countOfEqualsForSameIndexElements(List('a, 'a, 'a, 'a, 'b, 'c, 'c, 'a, 'a, 'd, 'e, 'e, 'e, 'e), List('a, 'b, 'a, 'd, 'b, 'c, 'c)) == 5)
+  }
+
+  "subList in list" should "multi subList" in {
+    assert(pack(List(1, 1, 2, 3, 3, 3, 4, 4, 2, 2, 22, 3, 3)) == List(List(1, 1), List(2), List(3, 3, 3), List(4, 4), List(2, 2), List(22), List(3, 3)))
+  }
 }

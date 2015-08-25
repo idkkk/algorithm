@@ -9,6 +9,31 @@ import scala.annotation.tailrec
  * @since 2015-08-05
  */
 object AlgorithmUtils {
+
+  /**
+   * 根据元素集合求对应连续元素的子集合.
+   * @param data 元素集合
+   * @return 子集合
+   */
+  def pack[T](data: List[T]): List[List[T]] = data match {
+    case Nil => Nil
+    case head :: _ => {
+      val (prefix, suffix) = data.span(head == _);
+      prefix :: pack(suffix)
+    }
+  }
+
+  /**
+   * 统计两个同类型集合同位置的元素相同的次数.
+   * @param a 集合A
+   * @param b 集合B
+   * @tparam T 集合类型
+   * @return 同位置元素相同的次数
+   */
+  def countOfEqualsForSameIndexElements[T](a: List[T], b: List[T]): Int = {
+    (a zip b) count { elem => elem._1 == elem._2 }
+  }
+
   /**
    * 消除连续重复元素.
    * @param data 元素集合
@@ -35,13 +60,11 @@ object AlgorithmUtils {
    * @param data List集合
    * @return flatten后的List集合
    */
-  def flatten(data: List[Any]): List[Any] = {
-    data match {
-      case List() => List()
-      case head :: tails => head match {
-        case x :: y => flatten(List(x)) ::: flatten(y) ::: flatten(tails)
-        case _ => head :: flatten(tails)
-      }
+  def flatten(data: List[Any]): List[Any] = data match {
+    case List() => List()
+    case head :: tails => head match {
+      case x :: y => flatten(List(x)) ::: flatten(y) ::: flatten(tails)
+      case _ => head :: flatten(tails)
     }
   }
 
