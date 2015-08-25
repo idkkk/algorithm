@@ -25,6 +25,6 @@
 | 大文本文件倒序生成                           | [Clojure](algorithm-clj/src/algorithm_clj/core.clj) | [Scala](algorithm-scala/src/main/scala/org/rubik/sandbox/common/util/FileUtils.scala)         |
 | 求给定数值区间中1出现的次数                   | [Clojure](algorithm-clj/src/algorithm_clj/core.clj) | [Scala](algorithm-scala/src/main/scala/org/rubik/sandbox/algorithm/util/AlgorithmUtils.scala)  |
 | 消除列表中连续重复的元素                       | [Clojure](algorithm-clj/src/algorithm_clj/core.clj) | [Scala](algorithm-scala/src/main/scala/org/rubik/sandbox/algorithm/util/AlgorithmUtils.scala) |
-| 根据指定列表中重复的元素来组成子集合         | [Clojure](algorithm-clj/src/algorithm_clj/core.clj) |  |  |
+| 根据指定列表中重复的元素来组成子集合         | [Clojure](algorithm-clj/src/algorithm_clj/core.clj) |    |
 | 根据指定列表中连续重复的元素来组成子集合         | [Clojure](algorithm-clj/src/algorithm_clj/core.clj) |  | [Scala](algorithm-scala/src/main/scala/org/rubik/sandbox/algorithm/util/AlgorithmUtils.scala) |
 | 统计两个列表中相同位置相等元素的个数            | [Clojure](algorithm-clj/src/algorithm_clj/core.clj) |  | [Scala](algorithm-scala/src/main/scala/org/rubik/sandbox/algorithm/util/AlgorithmUtils.scala) |
